@@ -1,0 +1,82 @@
+/* ============================================================
+   tokens.css — Identidad visual "Ruta del Valle"
+   Paleta inspirada en el valle cochabambino: maíz, barro,
+   verde de los sembradíos y cielo de eterna primavera.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  /* — Color — */
+  --ink:        #18241c;
+  --ink-soft:   #43534a;
+  --paper:      #fbf8f1;
+  --paper-2:    #f2ecdd;
+  --panel:      #ffffff;
+
+  --valle:      #2f7d52;   /* verde sembradío   */
+  --valle-deep: #1c5236;
+  --maiz:       #e3960f;   /* acento energía    */
+  --maiz-soft:  #f6e6c2;
+  --barro:      #c2562f;   /* arcilla / adobe   */
+  --cielo:      #4f93b0;   /* cielo primavera   */
+
+  --line:       rgba(24, 36, 28, .14);
+  --line-soft:  rgba(24, 36, 28, .07);
+  --shadow:     0 1px 2px rgba(24,36,28,.05), 0 8px 28px rgba(24,36,28,.07);
+  --shadow-lg:  0 16px 48px rgba(24,36,28,.14);
+
+  /* — Categorías del reto — */
+  --cat-sostenibilidad: #2f7d52;
+  --cat-agricultura:    #b07a1e;
+  --cat-turismo:        #4f93b0;
+  --cat-educacion:      #7a5ba6;
+  --cat-negocios:       #c2562f;
+  --cat-gastronomia:    #d23f2d;
+
+  /* — Tipografía — */
+  --display: 'Bricolage Grotesque', system-ui, sans-serif;
+  --body:    'Inter', system-ui, sans-serif;
+  --mono:    'Space Mono', ui-monospace, monospace;
+
+  /* — Escala — */
+  --step--1: clamp(.78rem, .76rem + .1vw, .85rem);
+  --step-0:  clamp(.95rem, .92rem + .15vw, 1.02rem);
+  --step-1:  clamp(1.15rem, 1.05rem + .4vw, 1.35rem);
+  --step-2:  clamp(1.45rem, 1.25rem + .8vw, 1.9rem);
+  --step-3:  clamp(1.9rem, 1.5rem + 1.6vw, 2.9rem);
+  --step-4:  clamp(2.6rem, 1.9rem + 3vw, 4.6rem);
+
+  /* — Espacio / forma — */
+  --gap:    1.25rem;
+  --radius: 14px;
+  --radius-lg: 22px;
+  --maxw:   1180px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 86px; -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--body);
+  font-size: var(--step-0);
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 { font-family: var(--display); line-height: 1.05; margin: 0; font-weight: 800; letter-spacing: -.02em; }
+p { margin: 0; }
+a { color: inherit; }
+img { max-width: 100%; display: block; }
+button { font-family: inherit; cursor: pointer; }
+
+:focus-visible { outline: 3px solid var(--maiz); outline-offset: 3px; border-radius: 4px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+}

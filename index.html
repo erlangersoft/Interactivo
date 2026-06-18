@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guía Exprés · Design Thinking + Business Model Canvas</title>
+<meta name="description" content="Manual interactivo para desarrollar proyectos exprés en 3 días con Design Thinking y el Business Model Canvas. Contexto Cochabamba, Bolivia.">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+<!-- ===================== NAV ===================== -->
+<header class="nav">
+  <div class="wrap nav__inner">
+    <a class="nav__brand" href="#inicio"><span class="nav__dot"></span> Reto Exprés · La Llajta</a>
+    <button class="nav__toggle" aria-expanded="false" aria-controls="menu">Menú</button>
+    <nav class="nav__links" id="menu" aria-label="Secciones">
+      <a href="#ruta">Ruta 3 días</a>
+      <a href="#dt">Design Thinking</a>
+      <a href="#instrumentos">Instrumentos</a>
+      <a href="#canvas">Canvas</a>
+      <a href="#persona">Persona</a>
+      <a href="#evaluar">Evaluar</a>
+      <a href="#categorias">Categorías</a>
+      <a href="#ejemplo">Ejemplo</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="inicio">
+  <div class="wrap hero__grid">
+    <div>
+      <span class="hero__eyebrow">Manual del participante · Cochabamba</span>
+      <h1>De una idea a un <span class="mark">prototipo</span> en <em>3 días</em>.</h1>
+      <p class="hero__lead">Una guía clara para equipos multidisciplinarios sin experiencia previa. Aprende a usar <b>Design Thinking</b> para entender el problema y el <b>Business Model Canvas</b> para darle forma de proyecto.</p>
+      <div class="hero__cta">
+        <a class="btn btn--maiz" href="#ruta">Empezar la ruta</a>
+        <a class="btn btn--ghost" href="#dt">Ver las 5 fases</a>
+      </div>
+    </div>
+    <aside class="routecard" aria-label="Resumen de los 3 días">
+      <h3>Tu ruta en una mirada</h3>
+      <ol>
+        <li><span class="d">Día 1</span><span class="t"><b>Entender e idear.</b> Empatizar, definir el problema y elegir una idea.</span></li>
+        <li><span class="d">Día 2</span><span class="t"><b>Construir y probar.</b> Prototipo, lienzo de negocio y primer testeo.</span></li>
+        <li><span class="d">Día 3</span><span class="t"><b>Pulir y presentar.</b> Ajustes finales, pitch y defensa ante el jurado.</span></li>
+      </ol>
+    </aside>
+  </div>
+</section>
+
+<!-- ===================== RUTA 3 DÍAS ===================== -->
+<section class="section section--tint" id="ruta">
+  <div class="wrap">
+    <div class="section__head">
+      <span class="section__kicker"><span class="n">01</span> Cómo funciona el evento</span>
+      <h2>Tres días, un reto, un equipo</h2>
+      <p class="section__intro">No necesitas saberlo todo. Sigue la ruta paso a paso. Cada día tiene un foco claro; marca tus avances en la lista al pie.</p>
+    </div>
+
+    <div class="timeline">
+      <article class="day">
+        <span class="day__tag">Día 1 · Descubrir</span>
+        <h3>Entender e idear</h3>
+        <p class="day__focus">Foco: el problema, no la solución</p>
+        <ul class="day__list">
+          <li><span class="h">AM</span><span>Conocer al equipo, repartir roles y elegir la categoría del reto.</span></li>
+          <li><span class="h">MED</span><span>Salir a empatizar: entrevistas y observación.</span></li>
+          <li><span class="h">PM</span><span>Definir el problema en una frase y hacer la lluvia de ideas.</span></li>
+        </ul>
+      </article>
+      <article class="day">
+        <span class="day__tag">Día 2 · Construir</span>
+        <h3>Prototipar y probar</h3>
+        <p class="day__focus">Foco: hacerlo tangible</p>
+        <ul class="day__list">
+          <li><span class="h">AM</span><span>Construir el prototipo de baja fidelidad.</span></li>
+          <li><span class="h">MED</span><span>Completar el Business Model Canvas.</span></li>
+          <li><span class="h">PM</span><span>Testear con personas reales y ajustar.</span></li>
+        </ul>
+      </article>
+      <article class="day">
+        <span class="day__tag">Día 3 · Presentar</span>
+        <h3>Pulir y defender</h3>
+        <p class="day__focus">Foco: contar bien la historia</p>
+        <ul class="day__list">
+          <li><span class="h">AM</span><span>Pulir prototipo y armar el pitch.</span></li>
+          <li><span class="h">MED</span><span>Ensayar cronometrado y repartir la presentación.</span></li>
+          <li><span class="h">PM</span><span>Presentar ante el jurado.</span></li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="note" style="margin-top:1.4rem">
+      <span>🎓</span>
+      <div>Equipo mixto de semestres iniciales y avanzados. <b>Aprovéchenlo:</b>
+        <span class="lvl ini">Inicial</span> aporta mirada fresca y preguntas valientes;
+        <span class="lvl adv">Avanzado</span> aporta método y viabilidad técnica. Ambas hacen falta.</div>
+    </div>
+
+    <h3 style="margin:2.4rem 0 1rem; font-size:var(--step-1)">Lista de avance del equipo</h3>
+    <div class="grid grid--3" id="checklist"></div>
+  </div>
+</section>
+
+<!-- ===================== DESIGN THINKING ===================== -->
+<section class="section" id="dt">
+  <div class="wrap">
+    <div class="section__head">
+      <span class="section__kicker"><span class="n">02</span> Metodología</span>
+      <h2>Design Thinking en 5 fases</h2>
+      <p class="section__intro">Una forma de resolver problemas que parte de las personas. Es iterativa: si en una fase descubren algo nuevo, pueden volver atrás. Toca cada fase para ver qué hacer.</p>
+    </div>
+    <div class="phases" id="phases"></div>
+  </div>
+</section>
+
+<!-- ===================== INSTRUMENTOS ===================== -->
+<section class="section section--tint" id="instrumentos">
+  <div class="wrap">
+    <div class="section__head">
+      <span class="section__kicker"><span class="n">03</span> Caja de herramientas</span>
+      <h2>Instrumentos por fase</h2>
+      <p class="section__intro">Plantillas y técnicas concretas para cada momento del proceso. No usen todas: elijan una o dos por fase según el tiempo.</p>
+    </div>
+    <div class="tools-grid" id="tools"></div>
+  </div>
+</section>
+
+<!-- ===================== BUSINESS MODEL CANVAS ===================== -->
+<section class="section" id="canvas">
+  <div class="wrap">
+    <div class="section__head">
+      <span class="section__kicker"><span class="n">04</span> Modelo de negocio</span>
+      <h2>Business Model Canvas interactivo</h2>
+      <p class="section__intro">Un lienzo de 9 bloques para ver todo el proyecto en una página: qué ofrecen, a quién, cómo y con qué recursos. Escriban directamente en cada bloque; se guarda solo en este navegador.</p>
+    </div>
+
+    <div class="toolbar">
+      <button class="btn btn--sm" id="bmcPrint">Imprimir / Guardar PDF</button>
+      <button class="btn btn--sm btn--ghost" id="bmcReset">Vaciar lienzo</button>
+      <span class="toolbar__status" id="bmcStatus"></span>
+    </div>
+
+    <div class="bmc" id="bmc">
+      <div class="bmc__cell c-socios" style="--c:var(--cat-sostenibilidad)">
+        <h5><span class="ic"></span> Socios clave</h5>
+        <p class="q">¿Quiénes nos ayudan? Proveedores, aliados, instituciones.</p>
+        <textarea data-field="socios" placeholder="Ej.: chicherías, alcaldía, productores…"></textarea>
+      </div>
+      <div class="bmc__cell c-actividades" style="--c:var(--cat-agricultura)">
+        <h5><span class="ic"></span> Actividades clave</h5>
+        <p class="q">¿Qué hay que hacer para entregar el valor?</p>
+        <textarea data-field="actividades" placeholder="Ej.: curar la ruta, generar contenido…"></textarea>
+      </div>
+      <div class="bmc__cell c-recursos" style="--c:var(--cat-agricultura)">
+        <h5><span class="ic"></span> Recursos clave</h5>
+        <p class="q">¿Qué necesitamos? Personas, tecnología, dinero.</p>
+        <textarea data-field="recursos" placeholder="Ej.: app, equipo, alianzas…"></textarea>
+      </div>
+      <div class="bmc__cell c-valor" style="--c:var(--cat-gastronomia)">
+        <h5><span class="ic"></span> Propuesta de valor</h5>
+        <p class="q">¿Qué problema resolvemos y por qué nos elegirían?</p>
+        <textarea data-field="valor" placeholder="El corazón del proyecto…"></textarea>
+      </div>
+      <div class="bmc__cell c-relacion" style="--c:var(--cat-educacion)">
+        <h5><span class="ic"></span> Relación con clientes</h5>
+        <p class="q">¿Cómo nos relacionamos con cada cliente?</p>
+        <textarea data-field="relacion" placeholder="Ej.: autoservicio, comunidad…"></textarea>
+      </div>
+      <div class="bmc__cell c-canales" style="--c:var(--cat-educacion)">
+        <h5><span class="ic"></span> Canales</h5>
+        <p class="q">¿Por dónde llegamos a los clientes?</p>
+        <textarea data-field="canales" placeholder="Ej.: WhatsApp, ferias, redes…"></textarea>
+      </div>
+      <div class="bmc__cell c-segmentos" style="--c:var(--cat-turismo)">
+        <h5><span class="ic"></span> Segmentos de clientes</h5>
+        <p class="q">¿Para quién creamos valor? ¿Quién es el cliente?</p>
+        <textarea data-field="segmentos" placeholder="Describan a su usuario…"></textarea>
+      </div>
+      <div class="bmc__cell c-costos" style="--c:var(--cat-negocios)">
+        <h5><span class="ic"></span> Estructura de costos</h5>
+        <p class="q">¿Cuáles son los gastos más importantes?</p>
+        <textarea data-field="costos" placeholder="Ej.: desarrollo, logística, sueldos…"></textarea>
+      </div>
+      <div class="bmc__cell c-ingresos" style="--c:var(--cat-negocios)">
+        <h5><span class="ic"></span> Fuentes de ingresos</h5>
+        <p class="q">¿Cómo gana dinero el proyecto?</p>
+        <textarea data-field="ingresos" placeholder="Ej.: comisión, venta, suscripción…"></textarea>
+      </div>
+    </div>
+
+    <div class="note" style="margin-top:1.4rem">
+      <span>💡</span>
+      <div>Llenen primero <b>Propuesta de valor</b> y <b>Segmentos de clientes</b>: son el centro. El resto del lienzo debe sostener esa promesa.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== USER PERSONA ===================== -->
+<section class="section section--tint" id="persona">
+  <div class="wrap">
+    <div class="section__head">
+      <span class="section__kicker"><span class="n">05</span> Empatía profunda</span>
+      <h2>User Persona</h2>
+      <p class="section__intro">Define a tu usuario ideal: quién es, qué necesita, qué le frustra y qué valora. Escribe directamente en cada campo; se guarda solo en este navegador.</p>
+    </div>
+
+    <div class="toolbar">
+      <button class="btn btn--sm" id="personaPrint" type="button">Imprimir / Guardar PDF</button>
+      <button class="btn btn--sm btn--ghost" id="personaReset" type="button">Vaciar lienzo</button>
+      <span class="toolbar__status" id="personaStatus"></span>
+    </div>
+
+    <div class="persona-canvas" id="persona-canvas">
+
+      <!-- Columna izquierda: foto + demografía -->
+      <div class="persona__col persona__col--left">
+        <div class="persona__photo">
+          <div class="persona__avatar">
+            <svg viewBox="0 0 48 54" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="46" height="46">
+              <circle cx="24" cy="15" r="11" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M18 13c1-1.8 2.8-1.8 4.2-.3s2.8 1.3 4-.3 3.2-1.4 4.2.3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+              <path d="M16.5 17.5c1.5-1.3 3-.4 4.5.6s2.5 1 3.8-.2 2.8-1 4.2.4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+              <path d="M4 50c0-9.4 9-17 20-17s20 7.6 20 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+            <span>Foto</span>
+          </div>
+        </div>
+        <input type="text" class="persona__name-input" data-field="nombre" placeholder="Nombre">
+        <div class="persona__demos">
+          <div class="persona__inline-row">
+            <label class="persona__lbl">Edad</label>
+            <input type="text" class="persona__input--inline" data-field="edad" placeholder="Ej. 28">
+            <label class="persona__lbl">Sexo</label>
+            <input type="text" class="persona__input--inline" data-field="sexo" placeholder="Ej. F">
+          </div>
+          <div class="persona__field">
+            <label class="persona__lbl">Ocupación</label>
+            <input type="text" data-field="ocupacion" placeholder="¿En qué trabaja?">
+          </div>
+          <div class="persona__field">
+            <label class="persona__lbl">Localización</label>
+            <input type="text" data-field="localizacion" placeholder="¿País, ciudad, barrio?">
+          </div>
+          <div class="persona__field">
+            <label class="persona__lbl">Ingresos</label>
+            <input type="text" data-field="ingresos" placeholder="¿Cómo es su poder adquisitivo?">
+          </div>
+          <div class="persona__field">
+            <label class="persona__lbl">Educación</label>
+            <input type="text" data-field="educacion" placeholder="¿Qué nivel formativo tiene?">
+          </div>
+          <div class="persona__field">
+            <label class="persona__lbl">Aficiones e intereses</label>
+            <input type="text" data-field="aficiones" placeholder="¿Qué hace cuando no trabaja?">
+          </div>
+          <div class="persona__field">
+            <label class="persona__lbl">Capacidad técnica / Dispositivos que usa</label>
+            <textarea data-field="tecnologia" rows="2" placeholder="Escribe aquí"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- Columna central: secciones clave -->
+      <div class="persona__col persona__col--center">
+        <div class="persona__block">
+          <h5 class="persona__block-title">Objetivos</h5>
+          <textarea data-field="objetivos" placeholder="Escribe aquí"></textarea>
+        </div>
+        <div class="persona__block">
+          <h5 class="persona__block-title">Motivaciones</h5>
+          <textarea data-field="motivaciones" placeholder="Escribe aquí"></textarea>
+        </div>
+        <div class="persona__block">
+          <h5 class="persona__block-title">Frustraciones</h5>
+          <textarea data-field="frustraciones" placeholder="Escribe aquí"></textarea>
+        </div>
+        <div class="persona__block">
+          <h5 class="persona__block-title">Marcas / Productos que le gustan</h5>
+          <textarea data-field="marcas" placeholder="Escribe aquí"></textarea>
+        </div>
+      </div>
+
+      <!-- Columna derecha: campos libres -->
+      <div class="persona__col persona__col--right">
+        <div class="persona__block">
+          <h5 class="persona__block-title">Otro</h5>
+          <textarea data-field="otro1" placeholder="Escribe aquí"></textarea>
+        </div>
+        <div class="persona__block">
+          <h5 class="persona__block-title">Otro</h5>
+          <textarea data-field="otro2" placeholder="Escribe aquí"></textarea>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="note" style="margin-top:1.4rem">
+      <span>👤</span>
+      <div>El User Persona <b>no es un invento</b>: surge de las entrevistas del Día 1. Basa cada campo en citas o comportamientos reales que observaste durante la empatía.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== EVALUAR ===================== -->
+<section class="section section--tint" id="evaluar">
+  <div class="wrap">
+    <div class="section__head">
+      <span class="section__kicker"><span class="n">06</span> Decidir con criterio</span>
+      <h2>Evaluador de la idea</h2>
+      <p class="section__intro">¿Tienen varias ideas y no saben cuál elegir? Puntúen cada criterio de 1 (nada) a 5 (totalmente). El promedio final les dirá qué tan lista está la idea.</p>
+    </div>
+
+    <div class="eval">
+      <div id="evalCriterios"></div>
+      <div class="score" aria-live="polite">
+        <div class="score__num" id="scoreNum">0.0</div>
+        <div class="score__den">promedio / 5</div>
+        <div class="score__bar"><div class="score__fill" id="scoreFill"></div></div>
+        <p class="score__msg" id="scoreMsg"></p>
+      </div>
+    </div>
+
+    <h3 style="margin:2.6rem 0 1rem; font-size:var(--step-1)">Formato: describan cada idea antes de evaluar</h3>
+    <div class="tablewrap">
+      <table class="ref">
+        <thead><tr><th>Nro</th><th>Nombre de la idea</th><th>Origen de la idea</th><th>Breve descripción</th><th>Por qué puede ganar</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>2</td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>3</td><td></td><td></td><td></td><td></td></tr>
+          <tr class="ej"><td>Ej.</td><td>Salsas del valle</td><td>Tendencia «sabor local»</td><td>Llajwa y ají envasados, listos para consumir y regalar.</td><td>Producto típico con demanda turística creciente.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CATEGORÍAS ===================== -->
+<section class="section" id="categorias">
+  <div class="wrap">
+    <div class="section__head">
+      <span class="section__kicker"><span class="n">07</span> El reto</span>
+      <h2>Categorías del desafío</h2>
+      <p class="section__intro">Cada equipo trabaja sobre una categoría. Toca una para ver el contexto cochabambino y un ejemplo de idea para inspirarse (no para copiar).</p>
+    </div>
+    <div class="cats" id="cats"></div>
+    <div class="cat__detail" id="catDetail" hidden></div>
+  </div>
+</section>
+
+<!-- ===================== EJEMPLO ===================== -->
+<section class="section section--tint" id="ejemplo">
+  <div class="wrap">
+    <div class="section__head">
+      <span class="section__kicker"><span class="n">08</span> Todo junto</span>
+      <h2>Un ejemplo de principio a fin</h2>
+      <p class="section__intro">Así se ve un equipo recorriendo las 5 fases y aterrizando su modelo de negocio en 3 días.</p>
+    </div>
+    <div class="example" id="example"></div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <h4>Reto Exprés · La Llajta</h4>
+        <p style="font-size:var(--step--1); max-width:34ch">Guía interactiva para crear proyectos en equipo aplicando Design Thinking y el Business Model Canvas, con ejemplos del valle cochabambino.</p>
+      </div>
+      <div>
+        <h4>Plataformas útiles</h4>
+        <ul>
+          <li><a href="https://miro.com" target="_blank" rel="noopener">Miro</a> · pizarra colaborativa</li>
+          <li><a href="https://figma.com/figjam" target="_blank" rel="noopener">FigJam / Figma</a> · diagramar y diseñar</li>
+          <li><a href="https://sessionlab.com" target="_blank" rel="noopener">SessionLab</a> · planificar talleres</li>
+          <li><a href="https://canva.com" target="_blank" rel="noopener">Canva</a> · prototipos y pitch</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Recuerden</h4>
+        <ul>
+          <li>Hablen con personas reales.</li>
+          <li>Una frase = un problema.</li>
+          <li>Prototipo feo y rápido &gt; perfecto y tarde.</li>
+          <li>El testeo es para aprender, no para tener razón.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot__bar">
+      <span>© <span id="year">2026</span> · Material de apoyo para proyectos exprés</span>
+      <span>Cochabamba, Bolivia</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/render.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/tools.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
