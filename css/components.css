@@ -13,6 +13,44 @@
 .btn--ghost { background: transparent; color: var(--ink); }
 .btn--maiz { background: var(--maiz); border-color: var(--maiz); color: var(--ink); }
 .btn--sm { padding: .5rem .9rem; font-size: var(--step--1); }
+.btn--scroll-top {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 60;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(12px);
+  transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
+}
+.btn--scroll-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.btn--scroll-top:hover { transform: translateY(-2px); }
+.btn--scroll-top.is-visible:hover { transform: translateY(-2px); }
+
+@media (max-width: 720px) {
+  .btn--scroll-top {
+    right: 1rem;
+    bottom: 1rem;
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+}
+
+@media print {
+  .btn--scroll-top { display: none !important; }
+}
 
 /* ---------- Tarjetas genéricas ---------- */
 .card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.4rem; box-shadow: var(--shadow); }
