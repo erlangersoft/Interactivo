@@ -87,6 +87,144 @@ function initPersona() {
   setStatus("Tus cambios se guardan solos en este navegador");
 }
 
+/* ---------- Impresión aislada de una herramienta ---------- */
+function printTool(printClass) {
+  const ps = document.createElement("style");
+  ps.id = "__tool-page";
+  ps.textContent = "@page{size:A4 landscape;margin:1.2cm}";
+  document.head.appendChild(ps);
+  document.body.classList.add(printClass);
+  window.print();
+  window.addEventListener("afterprint", () => {
+    document.body.classList.remove(printClass);
+    document.getElementById("__tool-page")?.remove();
+  }, { once: true });
+}
+
+/* ---------- Journal Map (mapa de recorrido) ---------- */
+function initJourney() {
+  const data = load();
+  const status = $("#journeyStatus");
+  const setStatus = t => { if (status) status.textContent = t; };
+
+  $$("#journey-map textarea").forEach(ta => {
+    const k = "jm_" + ta.dataset.field;
+    if (data[k]) ta.value = data[k];
+    ta.addEventListener("input", () => {
+      const d = load(); d[k] = ta.value; save(d);
+      setStatus("Guardado ✓");
+    });
+  });
+
+  $("#journeyReset")?.addEventListener("click", () => {
+    if (!confirm("¿Vaciar todo el mapa de recorrido? Esta acción no se puede deshacer.")) return;
+    const d = load();
+    Object.keys(d).filter(k => k.startsWith("jm_")).forEach(k => delete d[k]);
+    save(d);
+    $$("#journey-map textarea").forEach(ta => ta.value = "");
+    setStatus("Mapa vaciado");
+  });
+
+  $("#journeyPrint")?.addEventListener("click", () => printTool("print-journey"));
+  setStatus("Tus cambios se guardan solos en este navegador");
+}
+
+/* ---------- Formato: describir ideas antes de evaluar ---------- */
+function initIdeasTable() {
+  const data = load();
+  const status = $("#ideasStatus");
+  const setStatus = t => { if (status) status.textContent = t; };
+
+  $$(".idea-input").forEach(ta => {
+    const k = "idea_" + ta.dataset.field;
+    if (data[k]) ta.value = data[k];
+    ta.addEventListener("input", () => {
+      const d = load(); d[k] = ta.value; save(d);
+      setStatus("Guardado ✓");
+    });
+  });
+
+  $("#ideasReset")?.addEventListener("click", () => {
+    if (!confirm("¿Vaciar el formato de ideas? Esta acción no se puede deshacer.")) return;
+    const d = load();
+    Object.keys(d).filter(k => k.startsWith("idea_")).forEach(k => delete d[k]);
+    save(d);
+    $$(".idea-input").forEach(ta => ta.value = "");
+    setStatus("Formato vaciado");
+  });
+
+  setStatus("Tus cambios se guardan solos en este navegador");
+}
+
+/* ---------- Frase del Reto (Punto de Vista) ---------- */
+function initPov() {
+  const data = load();
+  const status = $("#povStatus");
+  const result = $("#povResult");
+  const inputs = $$("#pov-builder [data-field]");
+  const setStatus = t => { if (status) status.textContent = t; };
+
+  const compose = () => {
+    const get = f => (data["pov_" + f] || "").trim();
+    const u = get("usuario"), n = get("necesidad"), h = get("hallazgo");
+    if (!u && !n && !h) { result.textContent = ""; result.classList.remove("is-ready"); return; }
+    result.innerHTML = `«<b>${esc(u || "[Usuario]")}</b> necesita <b>${esc(n || "[necesidad]")}</b> porque <b>${esc(h || "[hallazgo sorprendente]")}</b>.»`;
+    result.classList.add("is-ready");
+  };
+
+  inputs.forEach(el => {
+    const k = "pov_" + el.dataset.field;
+    if (data[k]) el.value = data[k];
+    el.addEventListener("input", () => {
+      data[k] = el.value;
+      const d = load(); d[k] = el.value; save(d);
+      compose();
+      setStatus("Guardado ✓");
+    });
+  });
+
+  $("#povReset")?.addEventListener("click", () => {
+    if (!confirm("¿Vaciar la frase del reto?")) return;
+    const d = load();
+    Object.keys(d).filter(k => k.startsWith("pov_")).forEach(k => { delete d[k]; delete data[k]; });
+    save(d);
+    inputs.forEach(el => el.value = "");
+    compose();
+    setStatus("Frase vaciada");
+  });
+
+  compose();
+  setStatus("Tus cambios se guardan solos en este navegador");
+}
+
+/* ---------- Matriz de Feedback ---------- */
+function initFeedback() {
+  const data = load();
+  const status = $("#feedbackStatus");
+  const setStatus = t => { if (status) status.textContent = t; };
+
+  $$("#feedback-grid textarea").forEach(ta => {
+    const k = "fb_" + ta.dataset.field;
+    if (data[k]) ta.value = data[k];
+    ta.addEventListener("input", () => {
+      const d = load(); d[k] = ta.value; save(d);
+      setStatus("Guardado ✓");
+    });
+  });
+
+  $("#feedbackReset")?.addEventListener("click", () => {
+    if (!confirm("¿Vaciar la matriz de feedback? Esta acción no se puede deshacer.")) return;
+    const d = load();
+    Object.keys(d).filter(k => k.startsWith("fb_")).forEach(k => delete d[k]);
+    save(d);
+    $$("#feedback-grid textarea").forEach(ta => ta.value = "");
+    setStatus("Matriz vaciada");
+  });
+
+  $("#feedbackPrint")?.addEventListener("click", () => printTool("print-feedback"));
+  setStatus("Tus cambios se guardan solos en este navegador");
+}
+
 /* ---------- Evaluador de ideas ---------- */
 function initEvaluador() {
   const inputs = $$(".crit-input");

@@ -71,6 +71,34 @@ function renderChecklist() {
     </div>`).join("");
 }
 
+/* ---- Journal Map (mapa de recorrido) ---- */
+function renderJourney() {
+  const grid = $("#journey-map");
+  if (!grid) return;
+  let html = `<div class="journey__cell journey__cell--corner">Etapa →</div>`;
+  html += JOURNEY.cols.map(c => `<div class="journey__head">${esc(c)}</div>`).join("");
+  JOURNEY.filas.forEach(f => {
+    html += `<div class="journey__rowlabel"><b>${esc(f.nombre)}</b><span>${esc(f.hint)}</span></div>`;
+    html += JOURNEY.cols.map(c => {
+      const k = `${f.nombre}_${c}`.replace(/\s+/g, "-").toLowerCase();
+      return `<div class="journey__cell"><textarea data-field="${k}" placeholder="Escribe aquí"></textarea></div>`;
+    }).join("");
+  });
+  grid.innerHTML = html;
+}
+
+/* ---- Matriz de Feedback ---- */
+function renderFeedback() {
+  const grid = $("#feedback-grid");
+  if (!grid) return;
+  grid.innerHTML = FEEDBACK.map(z => `
+    <div class="fbz" style="--c:${z.color}">
+      <h5 class="fbz__title"><span class="fbz__ic">${z.icono}</span> ${esc(z.titulo)}</h5>
+      <p class="fbz__hint">${esc(z.hint)}</p>
+      <textarea data-field="${z.id}" placeholder="Escribe aquí…"></textarea>
+    </div>`).join("");
+}
+
 /* ---- Ejemplo trabajado ---- */
 function renderEjemplo() {
   $("#example").innerHTML = `

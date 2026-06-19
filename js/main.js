@@ -7,7 +7,9 @@ document.addEventListener("DOMContentLoaded", () => {
   renderFases();
   renderInstrumentos();
   renderCategorias();
+  renderJourney();
   renderEvaluador();
+  renderFeedback();
   renderChecklist();
   renderEjemplo();
 
@@ -17,7 +19,11 @@ document.addEventListener("DOMContentLoaded", () => {
   initCategorias();
   initCanvas();
   initPersona();
+  initJourney();
+  initPov();
+  initIdeasTable();
   initEvaluador();
+  initFeedback();
   initChecklist();
 
   // 3) Año dinámico en el footer
