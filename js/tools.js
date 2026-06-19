@@ -225,6 +225,82 @@ function initFeedback() {
   setStatus("Tus cambios se guardan solos en este navegador");
 }
 
+/* ---------- Calculadora de costos + punto de equilibrio ---------- */
+function initCostos() {
+  const grid = $("#costos");
+  if (!grid) return;
+  const data = load();
+  const status = $("#costStatus");
+  const result = $("#costResult");
+  const setStatus = t => { if (status) status.textContent = t; };
+  const num = el => { const v = parseFloat((el?.value || "").replace(",", ".")); return isFinite(v) ? v : 0; };
+  const fmt = n => Math.round(n).toLocaleString("es-BO");
+
+  const sum = sel => $$(sel, grid).reduce((a, el) => a + num(el), 0);
+
+  const calc = () => {
+    const CF  = sum('[data-field^="cf"][data-field$="_monto"]');
+    const CVu = sum('[data-field^="cv"][data-field$="_monto"]');
+    const P   = num($('[data-field="precio"]', grid));
+    const Q   = num($('[data-field="unidades"]', grid));
+    const MC  = P - CVu;
+    $("#costCFtot").textContent = fmt(CF) + " Bs";
+    $("#costCVtot").textContent = fmt(CVu) + " Bs";
+
+    if (P <= 0 && CF === 0 && CVu === 0) { result.innerHTML = ""; result.className = "cost__result"; return; }
+    if (MC <= 0) {
+      result.className = "cost__result is-warn";
+      result.innerHTML = `<p class="cost__warn">⚠️ El precio (<b>${fmt(P)} Bs</b>) no cubre el costo variable por unidad (<b>${fmt(CVu)} Bs</b>). Sube el precio o baja tus costos variables.</p>`;
+      return;
+    }
+    const peU = CF / MC;
+    const peBs = peU * P;
+    const U = MC * Q - CF;
+    result.className = "cost__result is-ok";
+    result.innerHTML = `
+      <div class="cost__be">
+        <span class="cost__be-lbl">Punto de equilibrio</span>
+        <span class="cost__be-num">${fmt(peU)}</span>
+        <span class="cost__be-uds">unidades / mes</span>
+        <span class="cost__be-bs">≈ ${fmt(peBs)} Bs en ventas</span>
+      </div>
+      <ul class="cost__kpis">
+        <li><span>Margen de contribución / unidad</span><b>${fmt(MC)} Bs</b></li>
+        <li><span>Utilidad estimada (con ${fmt(Q)} uds/mes)</span><b class="${U < 0 ? "neg" : "pos"}">${fmt(U)} Bs</b></li>
+      </ul>
+      <p class="cost__hint">Necesitas vender <b>${fmt(peU)} unidades al mes</b> solo para no perder. Cada unidad extra deja <b>${fmt(MC)} Bs</b> de ganancia.</p>`;
+  };
+
+  $$("[data-field]", grid).forEach(el => {
+    const k = "cost_" + el.dataset.field;
+    if (data[k] !== undefined) el.value = data[k];      // restaura concepto/monto/precio/unidades
+    el.addEventListener("input", () => {
+      const d = load(); d[k] = el.value; save(d);
+      calc();
+      setStatus("Guardado ✓");
+    });
+  });
+
+  $("#costReset")?.addEventListener("click", () => {
+    if (!confirm("¿Vaciar la calculadora de costos? Esta acción no se puede deshacer.")) return;
+    const d = load();
+    Object.keys(d).filter(k => k.startsWith("cost_")).forEach(k => delete d[k]);
+    save(d);
+    renderCostos();                              // restaura conceptos por defecto y montos vacíos
+    $$("[data-field]", $("#costos")).forEach(el => el.addEventListener("input", () => {
+      const dd = load(); dd["cost_" + el.dataset.field] = el.value; save(dd);
+      calc(); setStatus("Guardado ✓");
+    }));
+    calc();
+    setStatus("Calculadora vaciada");
+  });
+
+  $("#costPrint")?.addEventListener("click", () => printTool("print-cost"));
+
+  calc();
+  setStatus("Tus cambios se guardan solos en este navegador");
+}
+
 /* ---------- Evaluador de ideas ---------- */
 function initEvaluador() {
   const inputs = $$(".crit-input");

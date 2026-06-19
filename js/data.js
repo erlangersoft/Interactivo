@@ -174,16 +174,37 @@ const FEEDBACK = [
     hint: "Lo que confundió, falló o no convenció." }
 ];
 
+const COSTOS = {
+  fijos: [
+    { concepto: "Alquiler / espacio",      ej: "Ej.: local, internet" },
+    { concepto: "Servicios (luz, agua…)",  ej: "Ej.: básicos del mes" },
+    { concepto: "Sueldos fijos",           ej: "Ej.: equipo base" },
+    { concepto: "Software / herramientas", ej: "Ej.: licencias, hosting" },
+    { concepto: "Otros fijos",             ej: "Ej.: publicidad fija" }
+  ],
+  variables: [
+    { concepto: "Insumos / materia prima", ej: "Por cada unidad" },
+    { concepto: "Empaque",                 ej: "Por cada unidad" },
+    { concepto: "Comisión / delivery",     ej: "Por cada venta" },
+    { concepto: "Otros variables",         ej: "Por cada unidad" }
+  ]
+};
+
 const EJEMPLO = {
   cat: "Categoría: Turismo + Gastronomía",
   titulo: "QHATU — Ruta de sabores del valle",
   resumen: "Un equipo mixto (turismo, sistemas, administración y diseño) resuelve un reto de turismo en 3 días.",
   pasos: [
     { ph: "1 · Empatizar", txt: ["Entrevistan a 5 turistas en la plaza principal. Hallazgo textual: «quería probar comida típica de verdad, pero no sabía a dónde ir sin que me vean cara de turista».", "Observan que la gente confía más en la recomendación de un local que en una guía impresa."] },
-    { ph: "2 · Definir", txt: ["Frase del problema: «El visitante quiere vivir la gastronomía auténtica del valle, pero no encuentra lugares confiables ni la historia detrás de cada plato.»"] },
+    { ph: "User Persona", txt: ["Marcelo, 31, ingeniero paceño de viaje por el feriado. Objetivos: comer auténtico y volver con una historia que contar. Frustraciones: los lugares «para turistas» y no saber qué pedir. Usa el celular para todo y confía en reseñas reales."] },
+    { ph: "Journal Map", txt: ["Conciencia: ve la ruta en redes y se entusiasma (🤩). Consideración: duda si valdrá la pena y será seguro (🤔). Decisión: compra el pasaporte al ver precios claros y reseñas (😄). Retención: comparte fotos del sello y recomienda la ruta (😍)."] },
+    { ph: "2 · Definir · Frase del Reto", txt: ["«El visitante nacional necesita descubrir comida cochabambina auténtica con confianza porque no quiere caer en lugares «para turistas» ni perderse la historia detrás de cada plato.»"] },
     { ph: "3 · Idear", txt: ["Lluvia de 28 ideas. Ganadora por votación: una ruta autoguiada de comedores y chicherías tradicionales, con QR que cuentan la historia de cada lugar y un sello que se colecciona."] },
+    { ph: "Evaluar la idea", txt: ["Puntúan los 15 criterios: Persona 4,2 · Mercado 4,0 · Recursos 3,4. Promedio 3,9/5 → «buena idea con potencial». Reforzar Recursos: conseguir aliados y resolver la impresión del pasaporte."] },
     { ph: "4 · Prototipar", txt: ["Dibujan a mano 3 pantallas (mapa de la ruta, ficha de un comedor, sello coleccionable) y arman un folleto de cartón con los 4 primeros puntos de la ruta."] },
-    { ph: "5 · Testear", txt: ["Muestran el folleto a 3 visitantes. Dos no entienden el sello; uno pide precios. Ajustan: agregan rango de precio por plato y simplifican el sello a un mapa con check."] },
-    { ph: "Canvas", txt: ["Propuesta de valor: experiencia gastronómica auténtica y guiada. Segmento: turista nacional 25–45 años. Ingresos: comisión de comedores aliados + venta del pasaporte físico. Socios clave: chicherías, comedores y la alcaldía."] }
+    { ph: "5 · Testear · Matriz de Feedback", txt: ["Lo que funciona: el mapa y la idea del sello enganchan. Preguntas: «¿cuánto cuesta cada plato?». Ideas nuevas: añadir sello digital en el celular. Críticas: el sello de papel se entendía poco.", "Ajustan: agregan rango de precio por plato y simplifican el sello a un mapa con check."] },
+    { ph: "Business Model Canvas", txt: ["Propuesta de valor: experiencia gastronómica auténtica y guiada. Segmento: turista nacional 25–45 años. Ingresos: comisión de comedores aliados + venta del pasaporte físico. Canales: redes y puntos de información. Socios clave: chicherías, comedores y la alcaldía."] },
+    { ph: "Estructura de costos", txt: ["Costos fijos 1.800 Bs/mes (diseño, impresión base y difusión). Costo variable 12 Bs por pasaporte. Precio 30 Bs → margen 18 Bs.", "Punto de equilibrio: 100 pasaportes al mes (≈ 3.000 Bs) para no perder. Con 250 pasaportes/mes la utilidad estimada es 2.700 Bs."] },
+    { ph: "Pitch final", txt: ["Cierran con la historia de Marcelo: del «no sé a dónde ir» a compartir su ruta de sabores. Problema → solución → modelo de negocio sostenible, en 3 minutos ante el jurado."] }
   ]
 };

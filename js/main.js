@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderInstrumentos();
   renderCategorias();
   renderJourney();
+  renderCostos();
   renderEvaluador();
   renderFeedback();
   renderChecklist();
@@ -18,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initAcordeon();
   initCategorias();
   initCanvas();
+  initCostos();
   initPersona();
   initJourney();
   initPov();

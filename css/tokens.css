@@ -1,7 +1,7 @@
 /* ============================================================
-   tokens.css — Identidad visual "Semana Ci · CATEC Cochabamba"
+   tokens.css — Identidad visual "Semana C · CATEC Cochabamba"
    Paleta institucional del Instituto Tecnológico CATEC:
-   azul corporativo, rojo de acento y cyan de la Semana Ci.
+   azul corporativo, rojo de acento y cyan de la Semana C.
    (Reto Exprés · La Llajta)
    ============================================================ */
 
@@ -19,7 +19,7 @@
   --catec-azul: #1b4f9c;   /* azul corporativo  */
   --catec-azul-deep: #14366b;
   --catec-rojo: #d12f2f;   /* rojo CATEC        */
-  --catec-cyan: #2bb3e8;   /* cyan Semana Ci    */
+  --catec-cyan: #2bb3e8;   /* cyan Semana C     */
   --catec-cyan-soft: #dbeefb;
 
   /* Tokens de marca (mapeados a la identidad institucional) */
