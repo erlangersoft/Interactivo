@@ -1,30 +1,39 @@
 /* ============================================================
-   tokens.css — Identidad visual "Ruta del Valle"
-   Paleta inspirada en el valle cochabambino: maíz, barro,
-   verde de los sembradíos y cielo de eterna primavera.
+   tokens.css — Identidad visual "Semana Ci · CATEC Cochabamba"
+   Paleta institucional del Instituto Tecnológico CATEC:
+   azul corporativo, rojo de acento y cyan de la Semana Ci.
+   (Reto Exprés · La Llajta)
    ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap');
 
 :root {
   /* — Color — */
-  --ink:        #18241c;
-  --ink-soft:   #43534a;
-  --paper:      #fbf8f1;
-  --paper-2:    #f2ecdd;
+  --ink:        #16243a;
+  --ink-soft:   #45566e;
+  --paper:      #f6f9fc;
+  --paper-2:    #e7eef6;
   --panel:      #ffffff;
 
-  --valle:      #2f7d52;   /* verde sembradío   */
-  --valle-deep: #1c5236;
-  --maiz:       #e3960f;   /* acento energía    */
-  --maiz-soft:  #f6e6c2;
-  --barro:      #c2562f;   /* arcilla / adobe   */
-  --cielo:      #4f93b0;   /* cielo primavera   */
+  /* — Identidad CATEC / Semana Ci — */
+  --catec-azul: #1b4f9c;   /* azul corporativo  */
+  --catec-azul-deep: #14366b;
+  --catec-rojo: #d12f2f;   /* rojo CATEC        */
+  --catec-cyan: #2bb3e8;   /* cyan Semana Ci    */
+  --catec-cyan-soft: #dbeefb;
 
-  --line:       rgba(24, 36, 28, .14);
-  --line-soft:  rgba(24, 36, 28, .07);
-  --shadow:     0 1px 2px rgba(24,36,28,.05), 0 8px 28px rgba(24,36,28,.07);
-  --shadow-lg:  0 16px 48px rgba(24,36,28,.14);
+  /* Tokens de marca (mapeados a la identidad institucional) */
+  --valle:      var(--catec-azul);      /* color primario      */
+  --valle-deep: var(--catec-azul-deep);
+  --maiz:       var(--catec-cyan);      /* acento energía      */
+  --maiz-soft:  var(--catec-cyan-soft);
+  --barro:      var(--catec-rojo);      /* acento rojo         */
+  --cielo:      var(--catec-cyan);      /* cyan                */
+
+  --line:       rgba(22, 36, 58, .14);
+  --line-soft:  rgba(22, 36, 58, .07);
+  --shadow:     0 1px 2px rgba(22,36,58,.05), 0 8px 28px rgba(22,36,58,.08);
+  --shadow-lg:  0 16px 48px rgba(22,36,58,.16);
 
   /* — Categorías del reto — */
   --cat-sostenibilidad: #2f7d52;

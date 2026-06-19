@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Guía Exprés · Design Thinking + Business Model Canvas</title>
-<meta name="description" content="Manual interactivo para desarrollar proyectos exprés en 3 días con Design Thinking y el Business Model Canvas. Contexto Cochabamba, Bolivia.">
+<title>Semana C · CATEC · Reto Exprés La Llajta — Design Thinking + Business Model Canvas</title>
+<meta name="description" content="Manual interactivo para desarrollar proyectos exprés en 3 días con Design Thinking y el Business Model Canvas. Semana C · Instituto Tecnológico CATEC Cochabamba. Reto Exprés · La Llajta.">
 <link rel="stylesheet" href="css/tokens.css">
 <link rel="stylesheet" href="css/layout.css">
 <link rel="stylesheet" href="css/components.css">
@@ -14,16 +14,25 @@
 <!-- ===================== NAV ===================== -->
 <header class="nav">
   <div class="wrap nav__inner">
-    <a class="nav__brand" href="#inicio"><span class="nav__dot"></span> Reto Exprés · La Llajta</a>
+    <a class="nav__brand" href="#inicio">
+      <img class="nav__logo" src="img/logo_catec.png" alt="Instituto Tecnológico CATEC Cochabamba">
+      <span class="nav__brand-text">
+        <span class="nav__brand-top">Semana C · INNOVA CATEC</span>
+        <span class="nav__brand-sub">Reto Exprés · La Llajta</span>
+      </span>
+    </a>
     <button class="nav__toggle" aria-expanded="false" aria-controls="menu">Menú</button>
     <nav class="nav__links" id="menu" aria-label="Secciones">
       <a href="#ruta">Ruta 3 días</a>
+      <a href="#categorias">Categorías</a>
       <a href="#dt">Design Thinking</a>
       <a href="#instrumentos">Instrumentos</a>
-      <a href="#canvas">Canvas</a>
       <a href="#persona">Persona</a>
+      <a href="#journey">Journal Map</a>
+      <a href="#pov">Reto</a>
       <a href="#evaluar">Evaluar</a>
-      <a href="#categorias">Categorías</a>
+      <a href="#canvas">Canvas</a>
+      <a href="#feedback">Feedback</a>
       <a href="#ejemplo">Ejemplo</a>
     </nav>
   </div>
@@ -35,7 +44,7 @@
 <section class="hero" id="inicio">
   <div class="wrap hero__grid">
     <div>
-      <span class="hero__eyebrow">Manual del participante · Cochabamba</span>
+      <span class="hero__eyebrow">Semana C 2026 · Instituto Tecnológico CATEC Cochabamba</span>
       <h1>De una idea a un <span class="mark">prototipo</span> en <em>3 días</em>.</h1>
       <p class="hero__lead">Una guía clara para equipos multidisciplinarios sin experiencia previa. Aprende a usar <b>Design Thinking</b> para entender el problema y el <b>Business Model Canvas</b> para darle forma de proyecto.</p>
       <div class="hero__cta">
@@ -108,11 +117,24 @@
   </div>
 </section>
 
-<!-- ===================== DESIGN THINKING ===================== -->
-<section class="section" id="dt">
+<!-- ===================== CATEGORÍAS ===================== -->
+<section class="section" id="categorias">
   <div class="wrap">
     <div class="section__head">
-      <span class="section__kicker"><span class="n">02</span> Metodología</span>
+      <span class="section__kicker"><span class="n">02</span> El reto</span>
+      <h2>Categorías del desafío</h2>
+      <p class="section__intro">Lo primero del Día 1: cada equipo elige una categoría. Toca una para ver el contexto cochabambino y un ejemplo de idea para inspirarse (no para copiar).</p>
+    </div>
+    <div class="cats" id="cats"></div>
+    <div class="cat__detail" id="catDetail" hidden></div>
+  </div>
+</section>
+
+<!-- ===================== DESIGN THINKING ===================== -->
+<section class="section section--tint" id="dt">
+  <div class="wrap">
+    <div class="section__head">
+      <span class="section__kicker"><span class="n">03</span> Metodología</span>
       <h2>Design Thinking en 5 fases</h2>
       <p class="section__intro">Una forma de resolver problemas que parte de las personas. Es iterativa: si en una fase descubren algo nuevo, pueden volver atrás. Toca cada fase para ver qué hacer.</p>
     </div>
@@ -121,84 +143,14 @@
 </section>
 
 <!-- ===================== INSTRUMENTOS ===================== -->
-<section class="section section--tint" id="instrumentos">
+<section class="section" id="instrumentos">
   <div class="wrap">
     <div class="section__head">
-      <span class="section__kicker"><span class="n">03</span> Caja de herramientas</span>
+      <span class="section__kicker"><span class="n">04</span> Caja de herramientas</span>
       <h2>Instrumentos por fase</h2>
       <p class="section__intro">Plantillas y técnicas concretas para cada momento del proceso. No usen todas: elijan una o dos por fase según el tiempo.</p>
     </div>
     <div class="tools-grid" id="tools"></div>
-  </div>
-</section>
-
-<!-- ===================== BUSINESS MODEL CANVAS ===================== -->
-<section class="section" id="canvas">
-  <div class="wrap">
-    <div class="section__head">
-      <span class="section__kicker"><span class="n">04</span> Modelo de negocio</span>
-      <h2>Business Model Canvas interactivo</h2>
-      <p class="section__intro">Un lienzo de 9 bloques para ver todo el proyecto en una página: qué ofrecen, a quién, cómo y con qué recursos. Escriban directamente en cada bloque; se guarda solo en este navegador.</p>
-    </div>
-
-    <div class="toolbar">
-      <button class="btn btn--sm" id="bmcPrint">Imprimir / Guardar PDF</button>
-      <button class="btn btn--sm btn--ghost" id="bmcReset">Vaciar lienzo</button>
-      <span class="toolbar__status" id="bmcStatus"></span>
-    </div>
-
-    <div class="bmc" id="bmc">
-      <div class="bmc__cell c-socios" style="--c:var(--cat-sostenibilidad)">
-        <h5><span class="ic"></span> Socios clave</h5>
-        <p class="q">¿Quiénes nos ayudan? Proveedores, aliados, instituciones.</p>
-        <textarea data-field="socios" placeholder="Ej.: chicherías, alcaldía, productores…"></textarea>
-      </div>
-      <div class="bmc__cell c-actividades" style="--c:var(--cat-agricultura)">
-        <h5><span class="ic"></span> Actividades clave</h5>
-        <p class="q">¿Qué hay que hacer para entregar el valor?</p>
-        <textarea data-field="actividades" placeholder="Ej.: curar la ruta, generar contenido…"></textarea>
-      </div>
-      <div class="bmc__cell c-recursos" style="--c:var(--cat-agricultura)">
-        <h5><span class="ic"></span> Recursos clave</h5>
-        <p class="q">¿Qué necesitamos? Personas, tecnología, dinero.</p>
-        <textarea data-field="recursos" placeholder="Ej.: app, equipo, alianzas…"></textarea>
-      </div>
-      <div class="bmc__cell c-valor" style="--c:var(--cat-gastronomia)">
-        <h5><span class="ic"></span> Propuesta de valor</h5>
-        <p class="q">¿Qué problema resolvemos y por qué nos elegirían?</p>
-        <textarea data-field="valor" placeholder="El corazón del proyecto…"></textarea>
-      </div>
-      <div class="bmc__cell c-relacion" style="--c:var(--cat-educacion)">
-        <h5><span class="ic"></span> Relación con clientes</h5>
-        <p class="q">¿Cómo nos relacionamos con cada cliente?</p>
-        <textarea data-field="relacion" placeholder="Ej.: autoservicio, comunidad…"></textarea>
-      </div>
-      <div class="bmc__cell c-canales" style="--c:var(--cat-educacion)">
-        <h5><span class="ic"></span> Canales</h5>
-        <p class="q">¿Por dónde llegamos a los clientes?</p>
-        <textarea data-field="canales" placeholder="Ej.: WhatsApp, ferias, redes…"></textarea>
-      </div>
-      <div class="bmc__cell c-segmentos" style="--c:var(--cat-turismo)">
-        <h5><span class="ic"></span> Segmentos de clientes</h5>
-        <p class="q">¿Para quién creamos valor? ¿Quién es el cliente?</p>
-        <textarea data-field="segmentos" placeholder="Describan a su usuario…"></textarea>
-      </div>
-      <div class="bmc__cell c-costos" style="--c:var(--cat-negocios)">
-        <h5><span class="ic"></span> Estructura de costos</h5>
-        <p class="q">¿Cuáles son los gastos más importantes?</p>
-        <textarea data-field="costos" placeholder="Ej.: desarrollo, logística, sueldos…"></textarea>
-      </div>
-      <div class="bmc__cell c-ingresos" style="--c:var(--cat-negocios)">
-        <h5><span class="ic"></span> Fuentes de ingresos</h5>
-        <p class="q">¿Cómo gana dinero el proyecto?</p>
-        <textarea data-field="ingresos" placeholder="Ej.: comisión, venta, suscripción…"></textarea>
-      </div>
-    </div>
-
-    <div class="note" style="margin-top:1.4rem">
-      <span>💡</span>
-      <div>Llenen primero <b>Propuesta de valor</b> y <b>Segmentos de clientes</b>: son el centro. El resto del lienzo debe sostener esa promesa.</div>
-    </div>
   </div>
 </section>
 
@@ -308,11 +260,78 @@
   </div>
 </section>
 
-<!-- ===================== EVALUAR ===================== -->
-<section class="section section--tint" id="evaluar">
+<!-- ===================== JOURNAL MAP ===================== -->
+<section class="section" id="journey">
   <div class="wrap">
     <div class="section__head">
-      <span class="section__kicker"><span class="n">06</span> Decidir con criterio</span>
+      <span class="section__kicker"><span class="n">06</span> Recorrido del usuario</span>
+      <h2>Journal Map · Mapa del recorrido</h2>
+      <p class="section__intro">Traza el viaje que esperas que tenga tu persona al usar tu producto o servicio. Para cada etapa, describe sus metas, sentimientos, desafíos y motivaciones. Escribe directamente en cada celda; se guarda solo en este navegador.</p>
+    </div>
+
+    <div class="toolbar">
+      <button class="btn btn--sm" id="journeyPrint" type="button">Imprimir / Guardar PDF</button>
+      <button class="btn btn--sm btn--ghost" id="journeyReset" type="button">Vaciar mapa</button>
+      <span class="toolbar__status" id="journeyStatus"></span>
+    </div>
+
+    <div class="tablewrap">
+      <div class="journey" id="journey-map"></div>
+    </div>
+
+    <div class="note" style="margin-top:1.4rem">
+      <span>🗺️</span>
+      <div>Cada persona recibe un mapa. En la fila <b>Sentimientos</b> pueden usar emojis (😮 🤔 😄 🤩) para resumir la emoción de cada etapa. Basen el recorrido en lo observado durante la empatía, no en suposiciones.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FRASE DEL RETO / POV ===================== -->
+<section class="section section--tint" id="pov">
+  <div class="wrap">
+    <div class="section__head">
+      <span class="section__kicker"><span class="n">07</span> Definir el problema</span>
+      <h2>Frase del Reto (Punto de Vista)</h2>
+      <p class="section__intro">El corazón de la fase Definir: convierte todo lo que escuchaste en UNA frase clara. Completa los tres campos y la frase se arma sola; se guarda en este navegador.</p>
+    </div>
+
+    <div class="toolbar">
+      <button class="btn btn--sm btn--ghost" id="povReset" type="button">Vaciar frase</button>
+      <span class="toolbar__status" id="povStatus"></span>
+    </div>
+
+    <div class="pov" id="pov-builder">
+      <div class="pov__template">
+        <div class="pov__field">
+          <label class="pov__lbl">Usuario</label>
+          <input type="text" data-field="usuario" placeholder="¿Quién es? (ej. el visitante)">
+        </div>
+        <span class="pov__join">necesita</span>
+        <div class="pov__field">
+          <label class="pov__lbl">Necesidad</label>
+          <input type="text" data-field="necesidad" placeholder="¿Qué necesita? (un verbo)">
+        </div>
+        <span class="pov__join">porque</span>
+        <div class="pov__field">
+          <label class="pov__lbl">Hallazgo sorprendente</label>
+          <input type="text" data-field="hallazgo" placeholder="¿Qué descubriste? (el insight)">
+        </div>
+      </div>
+      <div class="pov__result" id="povResult" aria-live="polite"></div>
+    </div>
+
+    <div class="note" style="margin-top:1.4rem">
+      <span></span>
+      <div>Si la frase no cabe en una línea, todavía está difusa. <b>Un buen problema bien definido ya es media solución.</b> Eviten saltar a la app o al producto antes de tener esta frase.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== EVALUAR ===================== -->
+<section class="section" id="evaluar">
+  <div class="wrap">
+    <div class="section__head">
+      <span class="section__kicker"><span class="n">08</span> Decidir con criterio</span>
       <h2>Evaluador de la idea</h2>
       <p class="section__intro">¿Tienen varias ideas y no saben cuál elegir? Puntúen cada criterio de 1 (nada) a 5 (totalmente). El promedio final les dirá qué tan lista está la idea.</p>
     </div>
@@ -328,13 +347,35 @@
     </div>
 
     <h3 style="margin:2.6rem 0 1rem; font-size:var(--step-1)">Formato: describan cada idea antes de evaluar</h3>
+    <div class="toolbar">
+      <button class="btn btn--sm btn--ghost" id="ideasReset" type="button">Vaciar formato</button>
+      <span class="toolbar__status" id="ideasStatus"></span>
+    </div>
     <div class="tablewrap">
-      <table class="ref">
+      <table class="ref ref--editable">
         <thead><tr><th>Nro</th><th>Nombre de la idea</th><th>Origen de la idea</th><th>Breve descripción</th><th>Por qué puede ganar</th></tr></thead>
         <tbody>
-          <tr><td>1</td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>2</td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>3</td><td></td><td></td><td></td><td></td></tr>
+          <tr>
+            <td>1</td>
+            <td><textarea class="idea-input" data-field="r1_nombre" placeholder="Escribe aquí"></textarea></td>
+            <td><textarea class="idea-input" data-field="r1_origen" placeholder="Escribe aquí"></textarea></td>
+            <td><textarea class="idea-input" data-field="r1_desc" placeholder="Escribe aquí"></textarea></td>
+            <td><textarea class="idea-input" data-field="r1_gana" placeholder="Escribe aquí"></textarea></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><textarea class="idea-input" data-field="r2_nombre" placeholder="Escribe aquí"></textarea></td>
+            <td><textarea class="idea-input" data-field="r2_origen" placeholder="Escribe aquí"></textarea></td>
+            <td><textarea class="idea-input" data-field="r2_desc" placeholder="Escribe aquí"></textarea></td>
+            <td><textarea class="idea-input" data-field="r2_gana" placeholder="Escribe aquí"></textarea></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td><textarea class="idea-input" data-field="r3_nombre" placeholder="Escribe aquí"></textarea></td>
+            <td><textarea class="idea-input" data-field="r3_origen" placeholder="Escribe aquí"></textarea></td>
+            <td><textarea class="idea-input" data-field="r3_desc" placeholder="Escribe aquí"></textarea></td>
+            <td><textarea class="idea-input" data-field="r3_gana" placeholder="Escribe aquí"></textarea></td>
+          </tr>
           <tr class="ej"><td>Ej.</td><td>Salsas del valle</td><td>Tendencia «sabor local»</td><td>Llajwa y ají envasados, listos para consumir y regalar.</td><td>Producto típico con demanda turística creciente.</td></tr>
         </tbody>
       </table>
@@ -342,16 +383,97 @@
   </div>
 </section>
 
-<!-- ===================== CATEGORÍAS ===================== -->
-<section class="section" id="categorias">
+<!-- ===================== BUSINESS MODEL CANVAS ===================== -->
+<section class="section section--tint" id="canvas">
   <div class="wrap">
     <div class="section__head">
-      <span class="section__kicker"><span class="n">07</span> El reto</span>
-      <h2>Categorías del desafío</h2>
-      <p class="section__intro">Cada equipo trabaja sobre una categoría. Toca una para ver el contexto cochabambino y un ejemplo de idea para inspirarse (no para copiar).</p>
+      <span class="section__kicker"><span class="n">09</span> Modelo de negocio</span>
+      <h2>Business Model Canvas interactivo</h2>
+      <p class="section__intro">Un lienzo de 9 bloques para ver todo el proyecto en una página: qué ofrecen, a quién, cómo y con qué recursos. Escriban directamente en cada bloque; se guarda solo en este navegador.</p>
     </div>
-    <div class="cats" id="cats"></div>
-    <div class="cat__detail" id="catDetail" hidden></div>
+
+    <div class="toolbar">
+      <button class="btn btn--sm" id="bmcPrint">Imprimir / Guardar PDF</button>
+      <button class="btn btn--sm btn--ghost" id="bmcReset">Vaciar lienzo</button>
+      <span class="toolbar__status" id="bmcStatus"></span>
+    </div>
+
+    <div class="bmc" id="bmc">
+      <div class="bmc__cell c-socios" style="--c:var(--cat-sostenibilidad)">
+        <h5><span class="ic"></span> Socios clave</h5>
+        <p class="q">¿Quiénes nos ayudan? Proveedores, aliados, instituciones.</p>
+        <textarea data-field="socios" placeholder="Ej.: chicherías, alcaldía, productores…"></textarea>
+      </div>
+      <div class="bmc__cell c-actividades" style="--c:var(--cat-agricultura)">
+        <h5><span class="ic"></span> Actividades clave</h5>
+        <p class="q">¿Qué hay que hacer para entregar el valor?</p>
+        <textarea data-field="actividades" placeholder="Ej.: curar la ruta, generar contenido…"></textarea>
+      </div>
+      <div class="bmc__cell c-recursos" style="--c:var(--cat-agricultura)">
+        <h5><span class="ic"></span> Recursos clave</h5>
+        <p class="q">¿Qué necesitamos? Personas, tecnología, dinero.</p>
+        <textarea data-field="recursos" placeholder="Ej.: app, equipo, alianzas…"></textarea>
+      </div>
+      <div class="bmc__cell c-valor" style="--c:var(--cat-gastronomia)">
+        <h5><span class="ic"></span> Propuesta de valor</h5>
+        <p class="q">¿Qué problema resolvemos y por qué nos elegirían?</p>
+        <textarea data-field="valor" placeholder="El corazón del proyecto…"></textarea>
+      </div>
+      <div class="bmc__cell c-relacion" style="--c:var(--cat-educacion)">
+        <h5><span class="ic"></span> Relación con clientes</h5>
+        <p class="q">¿Cómo nos relacionamos con cada cliente?</p>
+        <textarea data-field="relacion" placeholder="Ej.: autoservicio, comunidad…"></textarea>
+      </div>
+      <div class="bmc__cell c-canales" style="--c:var(--cat-educacion)">
+        <h5><span class="ic"></span> Canales</h5>
+        <p class="q">¿Por dónde llegamos a los clientes?</p>
+        <textarea data-field="canales" placeholder="Ej.: WhatsApp, ferias, redes…"></textarea>
+      </div>
+      <div class="bmc__cell c-segmentos" style="--c:var(--cat-turismo)">
+        <h5><span class="ic"></span> Segmentos de clientes</h5>
+        <p class="q">¿Para quién creamos valor? ¿Quién es el cliente?</p>
+        <textarea data-field="segmentos" placeholder="Describan a su usuario…"></textarea>
+      </div>
+      <div class="bmc__cell c-costos" style="--c:var(--cat-negocios)">
+        <h5><span class="ic"></span> Estructura de costos</h5>
+        <p class="q">¿Cuáles son los gastos más importantes?</p>
+        <textarea data-field="costos" placeholder="Ej.: desarrollo, logística, sueldos…"></textarea>
+      </div>
+      <div class="bmc__cell c-ingresos" style="--c:var(--cat-negocios)">
+        <h5><span class="ic"></span> Fuentes de ingresos</h5>
+        <p class="q">¿Cómo gana dinero el proyecto?</p>
+        <textarea data-field="ingresos" placeholder="Ej.: comisión, venta, suscripción…"></textarea>
+      </div>
+    </div>
+
+    <div class="note" style="margin-top:1.4rem">
+      <span>💡</span>
+      <div>Llenen primero <b>Propuesta de valor</b> y <b>Segmentos de clientes</b>: son el centro. El resto del lienzo debe sostener esa promesa.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MATRIZ DE FEEDBACK ===================== -->
+<section class="section" id="feedback">
+  <div class="wrap">
+    <div class="section__head">
+      <span class="section__kicker"><span class="n">10</span> Aprender del testeo</span>
+      <h2>Matriz de Feedback</h2>
+      <p class="section__intro">Tras mostrar el prototipo a personas reales, ordenen cada comentario en una de las cuatro zonas. Así el testeo se vuelve aprendizaje accionable. Se guarda solo en este navegador.</p>
+    </div>
+
+    <div class="toolbar">
+      <button class="btn btn--sm" id="feedbackPrint" type="button">Imprimir / Guardar PDF</button>
+      <button class="btn btn--sm btn--ghost" id="feedbackReset" type="button">Vaciar matriz</button>
+      <span class="toolbar__status" id="feedbackStatus"></span>
+    </div>
+
+    <div class="feedback" id="feedback-grid"></div>
+
+    <div class="note" style="margin-top:1.4rem">
+      <span>🔍</span>
+      <div>El testeo no es para confirmar que tienen razón, es para <b>descubrir dónde se equivocaron</b> mientras todavía hay tiempo de corregir. Cállense y observen: anoten qué confunde, qué gusta y qué piden.</div>
+    </div>
   </div>
 </section>
 
@@ -359,7 +481,7 @@
 <section class="section section--tint" id="ejemplo">
   <div class="wrap">
     <div class="section__head">
-      <span class="section__kicker"><span class="n">08</span> Todo junto</span>
+      <span class="section__kicker"><span class="n">11</span> Todo junto</span>
       <h2>Un ejemplo de principio a fin</h2>
       <p class="section__intro">Así se ve un equipo recorriendo las 5 fases y aterrizando su modelo de negocio en 3 días.</p>
     </div>
@@ -396,9 +518,14 @@
         </ul>
       </div>
     </div>
+    <div class="foot__logos">
+      <img src="img/logo_catec.png" alt="Instituto Tecnológico CATEC Cochabamba">
+      <img src="img/SemanaC.png" alt="Semana C · INNOVA CATEC Cocha 2026">
+    </div>
     <div class="foot__bar">
-      <span>© <span id="year">2026</span> · Material de apoyo para proyectos exprés</span>
-      <span>Cochabamba, Bolivia</span>
+      <span>© <span id="year">2026</span> · Semana C · Instituto Tecnológico CATEC Cochabamba</span>
+      <!-- <span>Reto Exprés · La Llajta — Cochabamba, Bolivia</span>-->
+      <span>En colaboración con erlanger-soft — Cochabamba, Bolivia</span>
     </div>
   </div>
 </footer>

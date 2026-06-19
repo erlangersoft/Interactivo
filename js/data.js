@@ -153,6 +153,27 @@ const CHECKLIST = [
   ]}
 ];
 
+const JOURNEY = {
+  cols: ["Conciencia", "Consideración", "Decisión", "Retención"],
+  filas: [
+    { nombre: "Metas",        hint: "¿Qué quiere lograr en esta etapa?" },
+    { nombre: "Sentimientos", hint: "¿Cómo se siente? (puedes usar emojis)" },
+    { nombre: "Desafíos",     hint: "¿Qué obstáculos enfrenta?" },
+    { nombre: "Motivaciones", hint: "¿Qué lo impulsa a avanzar?" }
+  ]
+};
+
+const FEEDBACK = [
+  { id: "funciona", titulo: "Lo que funciona", icono: "✓", color: "var(--cat-sostenibilidad)",
+    hint: "Lo que gustó o resultó claro para el usuario." },
+  { id: "preguntas", titulo: "Preguntas", icono: "?", color: "var(--cat-turismo)",
+    hint: "Dudas que surgieron al usar el prototipo." },
+  { id: "ideas", titulo: "Ideas nuevas", icono: "💡", color: "var(--cat-agricultura)",
+    hint: "Sugerencias y oportunidades que aparecieron." },
+  { id: "criticas", titulo: "Críticas constructivas", icono: "✗", color: "var(--cat-negocios)",
+    hint: "Lo que confundió, falló o no convenció." }
+];
+
 const EJEMPLO = {
   cat: "Categoría: Turismo + Gastronomía",
   titulo: "QHATU — Ruta de sabores del valle",
