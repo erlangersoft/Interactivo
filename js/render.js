@@ -87,6 +87,42 @@ function renderJourney() {
   grid.innerHTML = html;
 }
 
+/* ---- Calculadora de costos (estructura de costos + punto de equilibrio) ---- */
+function renderCostos() {
+  const grid = $("#costos");
+  if (!grid) return;
+  const filas = (lista, pre) => lista.map((r, i) => `
+    <div class="cost__row">
+      <input type="text" class="cost__concepto" data-field="${pre}${i}_concepto"
+             value="${esc(r.concepto)}" placeholder="Concepto">
+      <input type="text" inputmode="decimal" class="cost__monto" data-field="${pre}${i}_monto"
+             placeholder="0" aria-label="Monto en Bs de ${esc(r.concepto)}">
+    </div>`).join("");
+
+  grid.innerHTML = `
+    <div class="cost__block">
+      <h4 class="cost__btitle">Costos fijos <span>· por mes (Bs)</span></h4>
+      ${filas(COSTOS.fijos, "cf")}
+      <div class="cost__sum">Total fijos <b id="costCFtot">0</b></div>
+    </div>
+    <div class="cost__block">
+      <h4 class="cost__btitle">Costos variables <span>· por unidad (Bs)</span></h4>
+      ${filas(COSTOS.variables, "cv")}
+      <div class="cost__sum">Costo variable / unidad <b id="costCVtot">0</b></div>
+    </div>
+    <div class="cost__block cost__block--params">
+      <h4 class="cost__btitle">Precio y ventas</h4>
+      <div class="cost__param">
+        <label>Precio de venta / unidad (Bs)</label>
+        <input type="text" inputmode="decimal" class="cost__monto" data-field="precio" placeholder="0">
+      </div>
+      <div class="cost__param">
+        <label>Unidades esperadas / mes</label>
+        <input type="text" inputmode="decimal" class="cost__monto" data-field="unidades" placeholder="0">
+      </div>
+    </div>`;
+}
+
 /* ---- Matriz de Feedback ---- */
 function renderFeedback() {
   const grid = $("#feedback-grid");
